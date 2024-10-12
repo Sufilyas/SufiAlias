@@ -7,24 +7,27 @@ app = Dash(__name__)
 server = app.server
 app.title = "Assignment 3 Sufina"
 
-#df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/main/assets/gdp_1960_2020.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/refs/heads/main/assets/spotify-2023.csv")
 
 image_path = 'assets/Multimedia_University_logo.png'
 
 app.layout = html.Div(
     style=
     {
-        'backgroundImage': 'url("assets/Tired_Happy.png")',  # Change to your background image path
-        'backgroundSize': 'cover',  # Ensures the image covers the entire area
-        'height': '100vh',  # Full height of the viewport
+        'fontFamily': 'Arial, sans-serif',  # Change to your preferred font
+        'fontSize': '20px',  # Font size
+        'color': 'white',  # Text color
+        'backgroundImage': 'url("assets/Tired_Happy.png")',
+        'backgroundSize': 'cover',
+        'height': '100vh',
+        'width': '100vw',
         'display': 'flex',
         'flexDirection': 'column',
-        'alignItems': 'center',  # Center horizontally
-        'justifyContent': 'flex-start',  # Align items at the top
-        'color': 'white',  # Optional: Change text color for better visibility
-        'padding': '20px',  # Optional: Add some padding for spacing
-        'border': 'none',  # Ensure no border
-        'margin': '0'  # Remove margin
+        'alignItems': 'center',
+        'justifyContent': 'flex-start',
+        'padding': '20px',
+        'border': 'none',
+        'margin': '0'
     },
     children=
     [
