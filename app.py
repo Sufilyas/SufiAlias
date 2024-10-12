@@ -19,9 +19,10 @@ app.layout = html.Div(
         'height': '100vh',  # Full height of the viewport
         'display': 'flex',
         'flexDirection': 'column',
-        'alignItems': 'center',
-        'justifyContent': 'center',
-        'color': 'white'  # Optional: Change text color for better visibility
+        'alignItems': 'center',  # Center horizontally
+        'justifyContent': 'flex-start',  # Align items at the top
+        'color': 'white',  # Optional: Change text color for better visibility
+        'padding': '20px'  # Optional: Add some padding for spacing
     },
     children=
     [
