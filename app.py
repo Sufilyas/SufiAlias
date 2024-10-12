@@ -7,13 +7,13 @@ app = Dash(__name__)
 server = app.server
 app.title = "Assignment 3 Sufina"
 
-df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/refs/heads/main/assets/spotify-2023.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/refs/heads/main/assets/spotify-2023.csv", encoding='ISO-8859-1')
 
 image_path = 'assets/Multimedia_University_logo.png'
 
 app.layout = html.Div(
     style=
-    {
+ {
         'fontFamily': 'Arial, sans-serif',  # Change to your preferred font
         'fontSize': '20px',  # Font size
         'color': 'white',  # Text color
@@ -23,11 +23,11 @@ app.layout = html.Div(
         'width': '100vw',
         'display': 'flex',
         'flexDirection': 'column',
-        'alignItems': 'center',
-        'justifyContent': 'flex-start',
-        'padding': '20px',
-        'border': 'none',
-        'margin': '0'
+        'alignItems': 'center', #alignment dia kat center
+        'justifyContent': 'flex-start', # text start from above, if want in mid put center
+        'padding': '20px', #spacing from the edge and word
+        'border': 'none', #make sure no border
+        'margin': '0' #to remove margin
     },
     children=
     [
