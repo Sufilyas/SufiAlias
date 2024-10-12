@@ -11,9 +11,23 @@ app.title = "Assignment 3 Sufina"
 
 image_path = 'assets/Multimedia_University_logo.png'
 
-app.layout = [html.H1('Assignment 3'), 
-              html.Img(src=image_path),
-              html.Div(id='debug')]
+app.layout = html.Div(
+    style={
+        'backgroundImage': 'url("assets/Tired_Happy.png")',  # Change to your background image path
+        'backgroundSize': 'cover',  # Ensures the image covers the entire area
+        'height': '100vh',  # Full height of the viewport
+        'display': 'flex',
+        'flexDirection': 'column',
+        'alignItems': 'center',
+        'justifyContent': 'center',
+        'color': 'white'  # Optional: Change text color for better visibility
+    },
+    children=[
+        html.H1('Assignment 3'),  # Main header
+        html.Img(src=image_path),  # Image displayed in the app
+        html.Div(id='debug'),  # Placeholder for any debug information or updates
+        #dcc.Graph(id='example-graph')  # Placeholder for a Plotly graph
+    ]
 
 # Optional: Example of a simple callback to update a graph
 # @app.callback(
