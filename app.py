@@ -23,6 +23,8 @@ app.layout = html.Div(
         'justifyContent': 'flex-start',  # Align items at the top
         'color': 'white',  # Optional: Change text color for better visibility
         'padding': '20px'  # Optional: Add some padding for spacing(bg x melekat terus kat atas)
+        'border': 'none',  # Ensure no border
+        'margin': '0'  # Remove margin
     },
     children=
     [
