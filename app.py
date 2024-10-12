@@ -5,14 +5,9 @@ import plotly.express as px
 
 # Initialize the Dash app
 app = Dash(__name__)
-app.title = "Assignment 3 Sufina"
-server = app.server  # Exposing the server to Gunicorn
+server = app.server  # This is the Flask server Gunicorn needs to access
+app.layout = html.Div("Hello World")
 
-# Add some layout or content (example with a header)
-app.layout = html.Div([
-    html.H1("Welcome to Assignment 3"),
-    dcc.Graph(id='graph')
-])
 
 # Optional: Example of a simple callback to update a graph
 # @app.callback(
