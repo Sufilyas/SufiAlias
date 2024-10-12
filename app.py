@@ -3,11 +3,16 @@ import numpy as np
 import pandas as pd 
 import plotly.express as px
 
-# Initialize the Dash app
 app = Dash(__name__)
-server = app.server  # This is the Flask server Gunicorn needs to access
-app.layout = html.Div("Hello World")
+app.title = "Assignment 3 Sufina"
+server = app.server
 
+#df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/MCM7183Exercise3/main/assets/gdp_1960_2020.csv")
+
+
+
+
+image_path = 'assets/Multimedia_University_logo.png'
 
 # Optional: Example of a simple callback to update a graph
 # @app.callback(
