@@ -17,7 +17,7 @@ server = app.server
 image_path = 'assets/Multimedia_University_logo.png'
 
 
-    return fig,fig2
+
 
 if __name__ == '__main__':
     #dah ok baru remove debug tu
