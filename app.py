@@ -16,7 +16,7 @@ top_artists = artist_scores.nlargest(10, 'Track Score')
 
 # Create the figures for each tab
 fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top Artists by Track Score', color='Artist')
-fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time', color='Artist')
+fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time')
 fig3 = px.pie(top_artists, names='Artist', values='Track Score', title='Track Score Distribution')
 
 app.layout = html.Div(
@@ -34,7 +34,7 @@ app.layout = html.Div(
         'flexDirection': 'column',
         'alignItems': 'center',
         'justifyContent': 'center',
-        'padding': '0',  
+        'padding': '10px',  
         'margin': '0' 
     },
     children=[
@@ -43,12 +43,26 @@ app.layout = html.Div(
                 html.H1('Most Streamed Spotify Songs 2024'),  # Text on the top left
             ],
             style={
-                'alignSelf': 'flex-start',  # Align to top left
-                'marginBottom': '20px'  # Space between title and graphs
+                'alignSelf': 'center',  # Align to top left
+                'marginBottom': '40px'  # Space between title and graphs
+                ''color'': 'white'
             }
         ),
         dcc.Tabs([
-            dcc.Tab(label='Bar Chart', children=[
+            dcc.Tab(label='Bar Chart', 
+            style={
+                        'color': 'white', 
+                        'backgroundColor': 'black',
+                        'border': 'none',  # No border around tab
+                        'padding': '10px',  # Padding for tabs
+            },
+                    active_style=
+                    {
+                        'backgroundColor': 'black',  # Color when tab is active
+                        'color': 'white',
+                        'border': 'none'  # No border around active tab
+                        }
+            children=[
                 html.Div(style={
                     'display': 'flex',
                     'justifyContent': 'center',
@@ -59,7 +73,20 @@ app.layout = html.Div(
                     dcc.Graph(figure=fig1)
                 ])
             ]),
-            dcc.Tab(label='Line Chart', children=[
+            dcc.Tab(label='Line Chart', 
+                        style={
+                        'color': 'white', 
+                        'backgroundColor': 'black',
+                        'border': 'none',  # No border around tab
+                        'padding': '10px',  # Padding for tabs
+            },
+                    active_style=
+                    {
+                        'backgroundColor': 'black',  # Color when tab is active
+                        'color': 'white',
+                        'border': 'none'  # No border around active tab
+                        }
+            children=[
                 html.Div(style={
                     'display': 'flex',
                     'justifyContent': 'center',
@@ -70,7 +97,20 @@ app.layout = html.Div(
                     dcc.Graph(figure=fig2)
                 ])
             ]),
-            dcc.Tab(label='Pie Chart', children=[
+            dcc.Tab(label='Pie Chart', 
+                        style={
+                        'color': 'white', 
+                        'backgroundColor': 'black',
+                        'border': 'none',  # No border around tab
+                        'padding': '10px',  # Padding for tabs
+            },
+                    active_style=
+                    {
+                        'backgroundColor': 'black',  # Color when tab is active
+                        'color': 'white',
+                        'border': 'none'  # No border around active tab
+                        }
+            children=[
                 html.Div(style={
                     'display': 'flex',
                     'justifyContent': 'center',
