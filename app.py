@@ -29,60 +29,82 @@ app.layout = html.Div(
         'width': '100vw',
         'display': 'flex',
         'flexDirection': 'column',
-        'alignItems': 'flex-start',  # Aligns children to the start
-        'padding': '20px',  # Add some padding
+        'alignItems': 'flex-start',  # Keep text on the left
+        'padding': '20px',
         'margin': '0'
     },
     children=[
-        html.H1('Most Streamed Spotify Songs 2024', style={'alignSelf': 'flex-start', 'marginBottom': '20px'}),  # Title at top left
+        html.H1('Most Streamed Spotify Songs 2024', style={
+            'alignSelf': 'flex-start',  # Align title to top left
+            'marginBottom': '20px', 
+            'color': 'white'  # Ensure title is white
+        }),
         dcc.Tabs(
-            style={'backgroundColor': 'grey'},  # Default tab background color
+            style={
+                'backgroundColor': 'black',
+                'color': 'white',
+                'border': 'none'  # No border around tabs
+            },
+            selected_style={
+                'backgroundColor': 'lightgrey',
+                'color': 'black',
+                'border': 'none'  # No border around selected tab
+            },
             children=[
                 dcc.Tab(
                     label='Bar Chart',
-                    style={'color': 'white', 'backgroundColor': 'grey'},  # Default tab color
-                    selected_style={'backgroundColor': 'lightgrey', 'color': 'black'},  # Selected tab color
+                    style={
+                        'color': 'white', 
+                        'backgroundColor': 'grey',
+                        'border': 'none'  # No border around tab
+                    },
                     children=[
                         html.Div(style={
                             'display': 'flex',
                             'justifyContent': 'center',
                             'alignItems': 'center',
-                            'height': '80vh',  # Height for the graph container
-                            'width': '100%'  # Set to 100% for full width, or adjust to e.g., '80%'
+                            'height': '80vh',  # Adjust height as needed
+                            'width': '100%'  # Full width
                         }, children=[
-                            dcc.Graph(figure=fig1, style={'height': '100%', 'width': '100%'})  # Set graph height and width to fill container
+                            dcc.Graph(figure=fig1, style={'height': '100%', 'width': '80%'})  # Adjust graph width here
                         ])
                     ]
                 ),
                 dcc.Tab(
                     label='Line Chart',
-                    style={'color': 'white', 'backgroundColor': 'grey'},  # Default tab color
-                    selected_style={'backgroundColor': 'lightgrey', 'color': 'black'},  # Selected tab color
+                    style={
+                        'color': 'white', 
+                        'backgroundColor': 'grey',
+                        'border': 'none'
+                    },
                     children=[
                         html.Div(style={
                             'display': 'flex',
                             'justifyContent': 'center',
                             'alignItems': 'center',
-                            'height': '80vh',  # Height for the graph container
-                            'width': '100%'  # Set to 100% for full width, or adjust to e.g., '80%'
+                            'height': '80vh',
+                            'width': '100%'
                         }, children=[
-                            dcc.Graph(figure=fig2, style={'height': '100%', 'width': '100%'})  # Set graph height and width to fill container
+                            dcc.Graph(figure=fig2, style={'height': '100%', 'width': '80%'})  # Adjust graph width here
                         ])
                     ]
                 ),
                 dcc.Tab(
                     label='Pie Chart',
-                    style={'color': 'white', 'backgroundColor': 'grey'},  # Default tab color
-                    selected_style={'backgroundColor': 'lightgrey', 'color': 'black'},  # Selected tab color
+                    style={
+                        'color': 'white', 
+                        'backgroundColor': 'grey',
+                        'border': 'none'
+                    },
                     children=[
                         html.Div(style={
                             'display': 'flex',
                             'justifyContent': 'center',
                             'alignItems': 'center',
-                            'height': '80vh',  # Height for the graph container
-                            'width': '100%'  # Set to 100% for full width, or adjust to e.g., '80%'
+                            'height': '80vh',
+                            'width': '100%'
                         }, children=[
-                            dcc.Graph(figure=fig3, style={'height': '100%', 'width': '100%'})  # Set graph height and width to fill container
+                            dcc.Graph(figure=fig3, style={'height': '100%', 'width': '80%'})  # Adjust graph width here
                         ])
                     ]
                 )
@@ -91,6 +113,4 @@ app.layout = html.Div(
     ]
 )
 
-# Running the app in debug mode when executed directly
-if __name__ == '__main__':
-    app.run(debug=True)
+# Running the app in debug mode
