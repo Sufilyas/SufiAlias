@@ -18,7 +18,6 @@ fig1 = px.bar(df, x='Artist', y='Track Score', title='Top Artists by Track Score
 fig2 = px.scatter(df, x='Release Date', y='Track Score', title='Track Score Over Time', color='Artist')
 fig3 = px.pie(df, names='Artist', values='Track Score', title='Track Score Distribution')
 
-
 app.layout = html.Div(
     style={
         'fontFamily': 'Arial, sans-serif',
@@ -39,9 +38,7 @@ app.layout = html.Div(
     children=[
         # Title
         html.Div(
-            children=[
-                html.H1('Most Streamed Spotify Songs 2024'),
-            ],
+            children=[html.H1('Most Streamed Spotify Songs 2024')],
             style={
                 'textAlign': 'center',  # Center the title text
                 'marginBottom': '20px',  # Space between title and text
@@ -51,15 +48,16 @@ app.layout = html.Div(
         
         # Text below the title
         html.Div(
-            children=[
-                html.P('This is the data of top song listen in spotify for 2024'),
-            ],
+            children=[html.P('This is the data of top songs listened to on Spotify for 2024')],
             style={
                 'textAlign': 'center',  # Center the text
                 'color': 'white',
                 'fontSize': '20px',  # Adjusted font size
                 'marginBottom': '40px',  # Space between text and tabs
             }
+        ),
+        
+        # Tabs for charts
         dcc.Tabs([
             dcc.Tab(label='Bar Chart', children=[
                 dcc.Graph(figure=fig1)  # First tab with bar chart
@@ -73,7 +71,7 @@ app.layout = html.Div(
         ])  
     ]  
 )
-        
+
 # Running the app in debug mode when executed directly
 if __name__ == '__main__':
     app.run(debug=True)
