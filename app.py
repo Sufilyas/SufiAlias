@@ -5,19 +5,19 @@ import plotly.express as px
 
 app = Dash(__name__)
 server = app.server
-app.title = "Assignment 3 Sufina"
+app.title = "Most Stream Spotify Songs 2024"
 
 df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/main/assets/Most_Streamed_Spotify_Songs_2024.csv", encoding='ISO-8859-1')
 
-image_path = 'assets/Multimedia_University_logo.png'
+#image_path = 'assets/Multimedia_University_logo.png'
 
 app.layout = html.Div(
     style=
  {
         'fontFamily': 'Arial, sans-serif',  # Change to your preferred font
-        'fontSize': '20px',  # Font size
+        'fontSize': '60px',  # Font size
         'color': 'white',  # Text color
-        'backgroundImage': 'url("assets/Tired_Happy.png")',
+        'backgroundImage': 'url("assets/music.jpg")',
         'backgroundSize': 'cover',
         'height': '100vh',
         'width': '100vw',
@@ -31,7 +31,7 @@ app.layout = html.Div(
     },
     children=
     [
-        html.H1('Assignment 3'),  # Main header
+        html.H1('Final Project'),  # Main header
         html.Img(src=image_path),  # Image displayed in the app
         html.Div(id='debug'),  # Placeholder for any debug information or updates
         #dcc.Graph(id='example-graph')  # Placeholder for a Plotly graph
