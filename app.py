@@ -13,6 +13,12 @@ df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/main/asse
 artist_scores = df.groupby('Artist', as_index=False)['Track Score'].mean()
 top_artists = artist_scores.nlargest(10, 'Track Score')
 
+# Create the figures for each tab
+fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top Artists by Track Score', color='Artist')
+fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time'#, color='Artist')
+fig3 = px.pie(top_artists, names='Artist', values='Track Score', title='Track Score Distribution')
+
+
 app.layout = html.Div(
     style=
  {
@@ -33,22 +39,19 @@ app.layout = html.Div(
         'border': 'none', #make sure no border
         'margin': '0' #to remove margin
     },
-    children=
-    [
-        html.H1('Most Stream Spotify Songs 2024'),  # Main header
-       # html.Img(src=image_path),  # Image displayed in the app
-        dcc.Graph(
-            id='top-artists-graph',
-            figure=px.bar(
-                top_artists,
-                x='Artist',
-                y='Track Score',
-                title='Top 10 Artists by Track Score',  # Adjusted title
-                color='Artist'  # Color bars by artist
-            )
-        ),  
-        html.Div(id='debug')
-        
+    children=[
+        html.H1('Most Streamed Spotify Songs 2024'),
+        dcc.Tabs([
+            dcc.Tab(label='Bar Chart', children=[
+                dcc.Graph(figure=fig1)  # First tab with bar chart
+            ]),
+            dcc.Tab(label='Scatter Plot', children=[
+                dcc.Graph(figure=fig2)  # Second tab with scatter plot
+            ]),
+            dcc.Tab(label='Pie Chart', children=[
+                dcc.Graph(figure=fig3)  # Third tab with pie chart
+            ])
+        ])
     ]
 )
 
