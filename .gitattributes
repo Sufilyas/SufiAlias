@@ -1,2 +1,4 @@
-*.csv text
-*.csv encoding=ISO-8859-1
+*.csv text eol=lf
+*.csv diff
+*.csv linguist-language=CSV
+*.csv encoding=UTF-8
