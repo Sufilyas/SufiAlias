@@ -34,7 +34,7 @@ app.layout = html.Div(
         'flexDirection': 'column',
         'alignItems': 'flex-start',
         'justifyContent': 'flex-start',
-        'padding': '0',  # Remove padding for full-screen charts
+        'padding': '0',  
         'margin': '0' 
     },
     children=[
@@ -71,6 +71,7 @@ app.layout = html.Div(
                     'width': '100%'  # Set to 100% for proper alignment
                 }, children=[
                     dcc.Graph(figure=fig3)
+                ])
             ])
         ])
     ]
