@@ -32,7 +32,7 @@ app.layout = html.Div(
     children=
     [
         html.H1('Final Project'),  # Main header
-        html.Img(src=image_path),  # Image displayed in the app
+       # html.Img(src=image_path),  # Image displayed in the app
         html.Div(id='debug'),  # Placeholder for any debug information or updates
         #dcc.Graph(id='example-graph')  # Placeholder for a Plotly graph
     ]
