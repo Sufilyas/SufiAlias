@@ -60,7 +60,7 @@ app.layout = html.Div(
                 'fontSize': '20px',  # Adjusted font size
                 'marginBottom': '40px',  # Space between text and tabs
             }
-            dcc.Tabs([
+        dcc.Tabs([
             dcc.Tab(label='Bar Chart', children=[
                 dcc.Graph(figure=fig1)  # First tab with bar chart
             ]),
@@ -70,8 +70,9 @@ app.layout = html.Div(
             dcc.Tab(label='Pie Chart', children=[
                 dcc.Graph(figure=fig3)  # Third tab with pie chart
             ])
-        ),
-    ]
+        ])  
+    ]  
+)
         
 # Running the app in debug mode when executed directly
 if __name__ == '__main__':
