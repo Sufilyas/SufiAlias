@@ -41,7 +41,7 @@ app.layout = html.Div(
             children=[html.H1('Most Streamed Spotify Songs 2024')],
             style={
                 'textAlign': 'center',  # Center the title text
-                'marginBottom': '20px',  # Space between title and text
+                'marginBottom': '30px',  # Space between title and text
                 'color': 'white'
             }
         ),
