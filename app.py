@@ -36,27 +36,28 @@ app.layout = html.Div(
     children=[
         html.H1('Most Streamed Spotify Songs 2024', style={
             'alignSelf': 'flex-start',  # Align title to top left
-            'marginBottom': '20px', 
+            'marginBottom': '20px',
             'color': 'white'  # Ensure title is white
         }),
         dcc.Tabs(
             style={
-                'backgroundColor': 'black',
+                'backgroundColor': 'grey',
                 'color': 'white',
                 'border': 'none'  # No border around tabs
-            },
-            selected_style={
-                'backgroundColor': 'lightgrey',
-                'color': 'black',
-                'border': 'none'  # No border around selected tab
             },
             children=[
                 dcc.Tab(
                     label='Bar Chart',
                     style={
                         'color': 'white', 
-                        'backgroundColor': 'grey',
-                        'border': 'none'  # No border around tab
+                        'backgroundColor': 'black',
+                        'border': 'none',  # No border around tab
+                        'padding': '10px',  # Padding for tabs
+                    },
+                    active_style={
+                        'backgroundColor': 'lightgrey',  # Color when tab is active
+                        'color': 'black',
+                        'border': 'none'  # No border around active tab
                     },
                     children=[
                         html.Div(style={
@@ -75,6 +76,12 @@ app.layout = html.Div(
                     style={
                         'color': 'white', 
                         'backgroundColor': 'grey',
+                        'border': 'none',
+                        'padding': '10px',
+                    },
+                    active_style={
+                        'backgroundColor': 'lightgrey',
+                        'color': 'black',
                         'border': 'none'
                     },
                     children=[
@@ -94,6 +101,12 @@ app.layout = html.Div(
                     style={
                         'color': 'white', 
                         'backgroundColor': 'grey',
+                        'border': 'none',
+                        'padding': '10px',
+                    },
+                    active_style={
+                        'backgroundColor': 'lightgrey',
+                        'color': 'black',
                         'border': 'none'
                     },
                     children=[
@@ -113,4 +126,6 @@ app.layout = html.Div(
     ]
 )
 
-# Running the app in debug mode
+# Running the app in debug mode when executed directly
+if __name__ == '__main__':
+    app.run(debug=True)
