@@ -33,7 +33,7 @@ app.layout = html.Div(
         'display': 'flex',
         'flexDirection': 'column',
         'alignItems': 'flex-start',
-        'justifyContent': 'flex-start',
+        'justifyContent': 'center',
         'padding': '0',  
         'margin': '0' 
     },
