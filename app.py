@@ -7,7 +7,7 @@ app = Dash(__name__)
 server = app.server
 app.title = "Assignment 3 Sufina"
 
-df = pd.read_csv(""https://raw.githubusercontent.com/Sufilyas/SufiAlias/main/assets/Most%20Streamed%20Spotify%20Songs%202024.csv"", encoding='ISO-8859-1')
+df = pd.read_csv("https://raw.githubusercontent.com/Sufilyas/SufiAlias/main/assets/Most_Streamed_Spotify_Songs_2024.csv", encoding='ISO-8859-1')
 
 image_path = 'assets/Multimedia_University_logo.png'
 
