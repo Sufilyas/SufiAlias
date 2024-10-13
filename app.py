@@ -21,6 +21,8 @@ app.layout = html.Div(
         'color': 'white',  # Text color
         'backgroundImage': 'url("assets/music.jpg")',
         'backgroundSize': 'cover',
+        'backgroundPosition': 'center',  
+        'backgroundRepeat': 'no-repeat',
         'height': '100vh',
         'width': '100vw',
         'display': 'flex',
@@ -35,8 +37,18 @@ app.layout = html.Div(
     [
         html.H1('Most Stream Spotify Songs 2024'),  # Main header
        # html.Img(src=image_path),  # Image displayed in the app
-        html.Div(id='debug'),  # Placeholder for any debug information or updates
-        #dcc.Graph(id='example-graph')  # Placeholder for a Plotly graph
+        dcc.Graph(
+            id='top-artists-graph',
+            figure=px.bar(
+                top_artists,
+                x='Artist',
+                y='Track Score',
+                title='Top 10 Artists by Track Score',  # Adjusted title
+                color='Artist'  # Color bars by artist
+            )
+        ),  
+        html.Div(id='debug')
+        
     ]
 )
 
