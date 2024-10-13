@@ -21,7 +21,7 @@ top_artists = artist_scores.nlargest(10, 'Track Score')
 app.layout = html.Div(
     style={
         'fontFamily': 'Arial, sans-serif',
-        'fontSize': '20px',  # Adjusted font size for better fit
+        'fontSize': '30px',  # Adjusted font size for better fit
         'color': 'white',
         'backgroundImage': 'url("assets/music.jpg")',
         'backgroundSize': 'cover',
@@ -46,6 +46,18 @@ app.layout = html.Div(
                 'color': 'white'
             }
         ),
+        dcc.Graph(
+            id='bar-chart',
+            figure=fig1
+        ),
+        dcc.Graph(
+            id='line-chart',
+            figure=fig2
+        ),
+        dcc.Graph(
+            id='pie-chart',
+            figure=fig3
+        )
         ]
 )
 
