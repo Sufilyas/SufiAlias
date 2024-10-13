@@ -14,9 +14,9 @@ artist_scores = df.groupby('Artist', as_index=False)['Track Score'].mean()
 top_artists = artist_scores.nlargest(10, 'Track Score')
 
 # Create the figures for each tab
-#fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top Artists by Track Score', color='Artist')
-#fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time')
-#fig3 = px.pie(top_artists, names='Artist', values='Track Score', title='Track Score Distribution')
+fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top 5 Artists by Track Score', color='Artist')
+fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time')
+fig3 = px.pie(top_artists, values='Track Score', names='Artist', title='Top 10 Artist Track Score')
 
 app.layout = html.Div(
     style={
@@ -36,30 +36,61 @@ app.layout = html.Div(
         'margin': '0'
     },
     children=[
+        # Title
         html.Div(
             children=[
                 html.H1('Most Streamed Spotify Songs 2024'),
             ],
             style={
                 'textAlign': 'center',  # Center the title text
-                'marginBottom': '40px',  # Space between title and graphs
+                'marginBottom': '20px',  # Space between title and text
                 'color': 'white'
             }
         ),
-        dcc.Graph(
-            id='bar-chart',
-            figure=fig1
+        
+        # Text below the title
+        html.Div(
+            children=[
+                html.P('This dashboard presents data on the top streamed songs on Spotify for the year 2024. '
+                       'Explore the charts to see the top artists and their track scores.'),
+            ],
+            style={
+                'textAlign': 'center',  # Center the text
+                'color': 'white',
+                'fontSize': '18px',  # Adjusted font size
+                'marginBottom': '40px',  # Space between text and tabs
+            }
         ),
-        dcc.Graph(
-            id='line-chart',
-            figure=fig2
+        
+        # Tabs for switching between graphs
+        dcc.Tabs(
+            id="graph-tabs",
+            value='tab-bar',  # Default tab
+            children=[
+                dcc.Tab(label='Top 5 Artists (Bar Chart)', value='tab-bar'),
+                dcc.Tab(label='Track Score Over Time (Line Chart)', value='tab-line'),
+                dcc.Tab(label='Top 10 Artists (Pie Chart)', value='tab-pie'),
+            ],
+            style={'width': '80%', 'margin': '0 auto'}  # Style to center tabs
         ),
-        dcc.Graph(
-            id='pie-chart',
-            figure=fig3
-        )
-        ]
+        
+        # Graph below the tabs
+        html.Div(id='graph-content')  # This will hold the graphs based on the selected tab
+    ]
 )
+
+# Callback to update graph based on selected tab
+@app.callback(
+    dcc.Output('graph-content', 'children'),
+    [dcc.Input('graph-tabs', 'value')]
+)
+def render_content(tab):
+    if tab == 'tab-bar':
+        return dcc.Graph(id='bar-chart', figure=fig1)
+    elif tab == 'tab-line':
+        return dcc.Graph(id='line-chart', figure=fig2)
+    elif tab == 'tab-pie':
+        return dcc.Graph(id='pie-chart', figure=fig3)
 
 # Running the app in debug mode when executed directly
 if __name__ == '__main__':
