@@ -39,15 +39,38 @@ app.layout = html.Div(
     },
     children=[
         html.H1('Most Streamed Spotify Songs 2024'),
-        dcc.Tabs([        
+        dcc.Tabs([
             dcc.Tab(label='Bar Chart', children=[
-                dcc.Graph(figure=fig1, style={'height': '100vh', 'width': '100%'})  # Set full height and width
+                html.Div(style={
+                    'display': 'flex',
+                    'justifyContent': 'center',
+                    'alignItems': 'center',
+                    'height': '50vh',
+                    'width': '100%'  # Set to 100% for proper alignment
+                }, children=[
+                    dcc.Graph(figure=fig1)
+                ])
             ]),
             dcc.Tab(label='Line Chart', children=[
-                dcc.Graph(figure=fig2, style={'height': '100vh', 'width': '100%'})  # Set full height and width
+                html.Div(style={
+                    'display': 'flex',
+                    'justifyContent': 'center',
+                    'alignItems': 'center',
+                    'height': '50vh',
+                    'width': '100%'  # Set to 100% for proper alignment
+                }, children=[
+                    dcc.Graph(figure=fig2)
+                ])
             ]),
             dcc.Tab(label='Pie Chart', children=[
-                dcc.Graph(figure=fig3, style={'height': '100vh', 'width': '100%'})  # Set full height and width
+                html.Div(style={
+                    'display': 'flex',
+                    'justifyContent': 'center',
+                    'alignItems': 'center',
+                    'height': '50vh',
+                    'width': '100%'  # Set to 100% for proper alignment
+                }, children=[
+                    dcc.Graph(figure=fig3)
             ])
         ])
     ]
