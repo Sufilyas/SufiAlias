@@ -71,6 +71,7 @@ app.layout = html.Div(
                 dcc.Graph(figure=fig3)  # Third tab with pie chart
             ])
         ),
+    ]
         
 # Running the app in debug mode when executed directly
 if __name__ == '__main__':
