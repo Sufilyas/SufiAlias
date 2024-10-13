@@ -14,9 +14,9 @@ artist_scores = df.groupby('Artist', as_index=False)['Track Score'].mean()
 top_artists = artist_scores.nlargest(10, 'Track Score')
 
 # Create the figures for each tab
-fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top Artists by Track Score', color='Artist')
-fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time')
-fig3 = px.pie(top_artists, names='Artist', values='Track Score', title='Track Score Distribution')
+#fig1 = px.bar(top_artists, x='Artist', y='Track Score', title='Top Artists by Track Score', color='Artist')
+#fig2 = px.line(top_artists, x='Artist', y='Track Score', title='Track Score Over Time')
+#fig3 = px.pie(top_artists, names='Artist', values='Track Score', title='Track Score Distribution')
 
 app.layout = html.Div(
     style={
