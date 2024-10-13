@@ -1,6 +1,5 @@
 from dash import Dash, html, dcc
-import numpy as np 
-import pandas as pd 
+import pandas as pd
 import plotly.express as px
 
 app = Dash(__name__)
@@ -27,7 +26,6 @@ app.layout = html.Div(
         'backgroundImage': 'url("assets/music.jpg")',
         'backgroundSize': 'cover',
         'backgroundPosition': 'center',  
-
         'height': '100vh',
         'width': '100vw',
         'display': 'flex',
@@ -44,83 +42,86 @@ app.layout = html.Div(
             ],
             style={
                 'alignSelf': 'center',  # Align to top left
-                'marginBottom': '40px'  # Space between title and graphs
-                ''color'': 'white'
+                'marginBottom': '40px',  # Space between title and graphs
+                'color': 'white'  # Ensure title is white
             }
         ),
         dcc.Tabs([
-            dcc.Tab(label='Bar Chart', 
-            style={
-                        'color': 'white', 
-                        'backgroundColor': 'black',
-                        'border': 'none',  # No border around tab
-                        'padding': '10px',  # Padding for tabs
-            },
-                    active_style=
-                    {
-                        'backgroundColor': 'black',  # Color when tab is active
-                        'color': 'white',
-                        'border': 'none'  # No border around active tab
-                        }
-            children=[
-                html.Div(style={
-                    'display': 'flex',
-                    'justifyContent': 'center',
-                    'alignItems': 'center',
-                    'height': '100vh',
-                    'width': '100%'  # Set to 100% for proper alignment
-                }, children=[
-                    dcc.Graph(figure=fig1)
-                ])
-            ]),
-            dcc.Tab(label='Line Chart', 
-                        style={
-                        'color': 'white', 
-                        'backgroundColor': 'black',
-                        'border': 'none',  # No border around tab
-                        'padding': '10px',  # Padding for tabs
-            },
-                    active_style=
-                    {
-                        'backgroundColor': 'black',  # Color when tab is active
-                        'color': 'white',
-                        'border': 'none'  # No border around active tab
-                        }
-            children=[
-                html.Div(style={
-                    'display': 'flex',
-                    'justifyContent': 'center',
-                    'alignItems': 'center',
-                    'height': '100vh',
-                    'width': '100%'  # Set to 100% for proper alignment
-                }, children=[
-                    dcc.Graph(figure=fig2)
-                ])
-            ]),
-            dcc.Tab(label='Pie Chart', 
-                        style={
-                        'color': 'white', 
-                        'backgroundColor': 'black',
-                        'border': 'none',  # No border around tab
-                        'padding': '10px',  # Padding for tabs
-            },
-                    active_style=
-                    {
-                        'backgroundColor': 'black',  # Color when tab is active
-                        'color': 'white',
-                        'border': 'none'  # No border around active tab
-                        }
-            children=[
-                html.Div(style={
-                    'display': 'flex',
-                    'justifyContent': 'center',
-                    'alignItems': 'center',
-                    'height': '100vh',
-                    'width': '100%'  # Set to 100% for proper alignment
-                }, children=[
-                    dcc.Graph(figure=fig3)
-                ])
-            ])
+            dcc.Tab(
+                label='Bar Chart', 
+                style={
+                    'color': 'white', 
+                    'backgroundColor': 'black',
+                    'border': 'none',  # No border around tab
+                    'padding': '10px',  # Padding for tabs
+                },
+                active_style={
+                    'backgroundColor': 'grey',  # Color when tab is active
+                    'color': 'white',
+                    'border': 'none'  # No border around active tab
+                },
+                children=[
+                    html.Div(style={
+                        'display': 'flex',
+                        'justifyContent': 'center',
+                        'alignItems': 'center',
+                        'height': '100vh',
+                        'width': '100%'  # Set to 100% for proper alignment
+                    }, children=[
+                        dcc.Graph(figure=fig1)
+                    ])
+                ]
+            ),
+            dcc.Tab(
+                label='Line Chart', 
+                style={
+                    'color': 'white', 
+                    'backgroundColor': 'black',
+                    'border': 'none',  # No border around tab
+                    'padding': '10px',  # Padding for tabs
+                },
+                active_style={
+                    'backgroundColor': 'grey',  # Color when tab is active
+                    'color': 'white',
+                    'border': 'none'  # No border around active tab
+                },
+                children=[
+                    html.Div(style={
+                        'display': 'flex',
+                        'justifyContent': 'center',
+                        'alignItems': 'center',
+                        'height': '100vh',
+                        'width': '100%'  # Set to 100% for proper alignment
+                    }, children=[
+                        dcc.Graph(figure=fig2)
+                    ])
+                ]
+            ),
+            dcc.Tab(
+                label='Pie Chart', 
+                style={
+                    'color': 'white', 
+                    'backgroundColor': 'black',
+                    'border': 'none',  # No border around tab
+                    'padding': '10px',  # Padding for tabs
+                },
+                active_style={
+                    'backgroundColor': 'grey',  # Color when tab is active
+                    'color': 'white',
+                    'border': 'none'  # No border around active tab
+                },
+                children=[
+                    html.Div(style={
+                        'display': 'flex',
+                        'justifyContent': 'center',
+                        'alignItems': 'center',
+                        'height': '100vh',
+                        'width': '100%'  # Set to 100% for proper alignment
+                    }, children=[
+                        dcc.Graph(figure=fig3)
+                    ])
+                ]
+            )
         ])
     ]
 )
