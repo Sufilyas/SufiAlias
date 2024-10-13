@@ -33,7 +33,7 @@ app.layout = html.Div(
         'display': 'flex',
         'flexDirection': 'column',
         'alignItems': 'flex-start',
-        'justifyContent': 'center',
+        'justifyContent': 'flex-start',
         'padding': '0',  
         'margin': '0' 
     },
@@ -45,7 +45,7 @@ app.layout = html.Div(
                     'display': 'flex',
                     'justifyContent': 'center',
                     'alignItems': 'center',
-                    'height': '50vh',
+                    'height': '100vh',
                     'width': '100%'  # Set to 100% for proper alignment
                 }, children=[
                     dcc.Graph(figure=fig1)
@@ -56,7 +56,7 @@ app.layout = html.Div(
                     'display': 'flex',
                     'justifyContent': 'center',
                     'alignItems': 'center',
-                    'height': '50vh',
+                    'height': '100vh',
                     'width': '100%'  # Set to 100% for proper alignment
                 }, children=[
                     dcc.Graph(figure=fig2)
@@ -67,7 +67,7 @@ app.layout = html.Div(
                     'display': 'flex',
                     'justifyContent': 'center',
                     'alignItems': 'center',
-                    'height': '50vh',
+                    'height': '100vh',
                     'width': '100%'  # Set to 100% for proper alignment
                 }, children=[
                     dcc.Graph(figure=fig3)
