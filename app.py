@@ -32,13 +32,21 @@ app.layout = html.Div(
         'width': '100vw',
         'display': 'flex',
         'flexDirection': 'column',
-        'alignItems': 'flex-start',
-        'justifyContent': 'flex-start',
+        'alignItems': 'center',
+        'justifyContent': 'center',
         'padding': '0',  
         'margin': '0' 
     },
     children=[
-        html.H1('Most Streamed Spotify Songs 2024'),
+        html.Div(
+            children=[
+                html.H1('Most Streamed Spotify Songs 2024'),  # Text on the top left
+            ],
+            style={
+                'alignSelf': 'flex-start',  # Align to top left
+                'marginBottom': '20px'  # Space between title and graphs
+            }
+        ),
         dcc.Tabs([
             dcc.Tab(label='Bar Chart', children=[
                 html.Div(style={
